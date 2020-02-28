@@ -1,0 +1,15 @@
+#+LANGUAGE:    it
+#+OPTIONS:     H:2 num:nil toc:nil \n:nil @:t ::t |:t ^:t f:t TeX:t
+
+
+* Setup Linux del Dipartimento di Statistica
+
+  Questo  è un  setup riproducibile  per una  macchina virtuale  Linux
+  basata su  Ubuntu 20.04. Questa macchina  dovrebbe venire utilizzata
+  per   i   computer   del   Dipartimento   di   Scienze   Statistiche
+  dell'Università `La Sapienza' di Roma.
+
+  Il setup è basato su Vagrant e Virtualbox
+
+
+Copyright 2020 © Massimo Lauria ([[mailto:massimo.lauria@uniroma1.it][massimo.lauria@uniroma1.it]])
