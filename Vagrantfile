@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
-
+  
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
   end
@@ -13,5 +13,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: "sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config"
 
   # Run configuration script from inside
-  config.vm.provision "shell", inline: "make runsetup"
+  config.vm.provision "shell", inline: "make machinesetup"
 end

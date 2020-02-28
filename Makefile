@@ -1,18 +1,27 @@
-# Copyright (C) 2020 by Massimo Lauria <lauria@kth.se>
+# Copyright (C) 2020 by Massimo Lauria <massimo.lauria@uniroma1.it>
 #
-# Time-stamp: "2020-02-28, 15:22 (CET) Massimo Lauria"
+# Time-stamp: "2020-02-28, 17:01 (CET) Massimo Lauria"
 #
 #
 ## Makefile to setup the student machine
 #
 
 
-all: systemsetup usersetup
 
-.PHONY: all userseup systemsetup
+all: machinesetup
+
+machinesetup: systemsetup usersetup
+
+.PHONY: all machinesetup usersetup systemsetup
 
 systemsetup:
-	sudo run-parts system-setup.d
+	@echo "***** Script di configurazione di sistema *****"
+	@for sh_snippet in system-setup.d/*.sh; do \
+	     . $$sh_snippet;                       \
+	 done
 
 usersetup:
-	sudo run-parts user-setup.d
+	@echo "***** Script di configurazione degli utenti *****"
+	@for sh_snipper in user-setup.d/*.sh; do \
+	     . $$sh_snippet;                     \
+	 done
